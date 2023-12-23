@@ -7,30 +7,35 @@ EMISSION_FACTORS = {
         "Electricity": 0.64,  # kgCO2/kWh
         "Diet": 1.6,  # kgCO2/meal
         "Waste": 0.55  # kgCO2/kg
+        "Average Emissions": 7.8 #per capita, tons
     }
     , "EU": {
         "Transportation": 13.2,  # kgCO2/km
         "Electricity": 0.24,  # kgCO2/kWh
         "Diet": 1.25,  # kgCO2/meal,
         "Waste": 0.35  # kgCO2/kg
+        "Average Emissions": 7.8 #per capita, tons
     }
     , "India": {
         "Transportation": 1.6,  # kgCO2/km
         "Electricity": 0.82,  # kgCO2/kWh
         "Diet": 1.25,  # kgCO2/meal, 2.5kgco2/kg
         "Waste": 0.5  # kgCO2/kg
+        "Average Emissions": 1.6 #per capita, tons
     }
     , "USA": {
         "Transportation": 14.3,  # kgCO2/km
         "Electricity": 0.48,  # kgCO2/kWh
         "Diet": 1.54,  # kgCO2/meal, estimated by project drawdown
         "Waste": 0.45  # kgCO2/kg
+        "Average Emissions": 13 #per capita, tons
     }
     , "Vietnam": {
         "Transportation": 1,  # kgCO2/km
         "Electricity": 0.6,  # kgCO2/kWh
         "Diet": 1,  # kgCO2/meal, 2.5kgco2/kg
         "Waste": 0.45  # kgCO2/kg
+        "Average Emissions": 3.7 #per capita, tons
     }
 }
 
@@ -75,6 +80,7 @@ transportation_emissions = EMISSION_FACTORS[country]["Transportation"] * distanc
 electricity_emissions = EMISSION_FACTORS[country]["Electricity"] * electricity
 diet_emissions = EMISSION_FACTORS[country]["Diet"] * meals
 waste_emissions = EMISSION_FACTORS[country]["Waste"] * waste
+average_emissions = EMISSION_FACTORS[country]["Average Emissions"]
 
 # Convert emissions to tonnes and round off to 2 decimal points
 transportation_emissions = round(transportation_emissions / 1000, 2)
@@ -86,6 +92,7 @@ waste_emissions = round(waste_emissions / 1000, 2)
 total_emissions = round(
     transportation_emissions + electricity_emissions + diet_emissions + waste_emissions, 2
 )
+comparison = (total_emissions/average_emissions)*100
 
 if st.button("Calculate CO2 Emissions"):
 
@@ -104,4 +111,4 @@ if st.button("Calculate CO2 Emissions"):
     with col4:
         st.subheader("Total Carbon Footprint")
         st.success(f"🌍 Your total carbon footprint is: {total_emissions} tonnes CO2 per year")
-        st.warning("In 2021, CO2 emissions per capita for India was 1.9 tons of CO2 per capita. Between 1972 and 2021, CO2 emissions per capita of India grew substantially from 0.39 to 1.9 tons of CO2 per capita rising at an increasing annual rate that reached a maximum of 9.41% in 2021")
+        st.warning("The average emissions per capita in your country is {average_emissions} tonnes per year. Your total carbon footprint is equivalent to {comparison}% of your average national carbon footprint")
