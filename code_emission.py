@@ -6,35 +6,35 @@ EMISSION_FACTORS = {
         "Transportation": 6.3,  # kgCO2/km
         "Electricity": 0.64,  # kgCO2/kWh
         "Diet": 1.6,  # kgCO2/meal
-        "Waste": 0.55  # kgCO2/kg
+        "Waste": 0.55,  # kgCO2/kg
         "AverageEmissions": 7.8 #per capita, tons
     }
     , "EU": {
         "Transportation": 13.2,  # kgCO2/km
         "Electricity": 0.24,  # kgCO2/kWh
         "Diet": 1.25,  # kgCO2/meal,
-        "Waste": 0.35  # kgCO2/kg
+        "Waste": 0.35,  # kgCO2/kg
         "AverageEmissions": 7.8 #per capita, tons
     }
     , "India": {
         "Transportation": 1.6,  # kgCO2/km
         "Electricity": 0.82,  # kgCO2/kWh
         "Diet": 1.25,  # kgCO2/meal, 2.5kgco2/kg
-        "Waste": 0.5  # kgCO2/kg
+        "Waste": 0.5,  # kgCO2/kg
         "AverageEmissions": 1.6 #per capita, tons
     }
     , "USA": {
         "Transportation": 14.3,  # kgCO2/km
         "Electricity": 0.48,  # kgCO2/kWh
         "Diet": 1.54,  # kgCO2/meal, estimated by project drawdown
-        "Waste": 0.45  # kgCO2/kg
+        "Waste": 0.45,  # kgCO2/kg
         "AverageEmissions": 13 #per capita, tons
     }
     , "Vietnam": {
         "Transportation": 1,  # kgCO2/km
         "Electricity": 0.6,  # kgCO2/kWh
         "Diet": 1,  # kgCO2/meal, 2.5kgco2/kg
-        "Waste": 0.45  # kgCO2/kg
+        "Waste": 0.45,  # kgCO2/kg
         "AverageEmissions": 3.7 #per capita, tons
     }
 }
