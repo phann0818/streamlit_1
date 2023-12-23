@@ -2,19 +2,7 @@ import streamlit as st
 
 # Define emission factors (example values, replace with accurate data)
 EMISSION_FACTORS = {
-    "India": {
-        "Transportation": 1.6,  # kgCO2/km
-        "Electricity": 0.82,  # kgCO2/kWh
-        "Diet": 1.25,  # kgCO2/meal, 2.5kgco2/kg
-        "Waste": 0.5  # kgCO2/kg
-    }
-    , "USA": {
-        "Transportation": 14.3,  # kgCO2/km
-        "Electricity": 0.48,  # kgCO2/kWh
-        "Diet": 1.54,  # kgCO2/meal, estimated by project drawdown
-        "Waste": 0.45  # kgCO2/kg
-    }
-    , "China": {
+    "China": {
         "Transportation": 6.3,  # kgCO2/km
         "Electricity": 0.64,  # kgCO2/kWh
         "Diet": 1.6,  # kgCO2/meal
@@ -25,6 +13,18 @@ EMISSION_FACTORS = {
         "Electricity": 0.24,  # kgCO2/kWh
         "Diet": 1.25,  # kgCO2/meal,
         "Waste": 0.35  # kgCO2/kg
+    }
+    , "India": {
+        "Transportation": 1.6,  # kgCO2/km
+        "Electricity": 0.82,  # kgCO2/kWh
+        "Diet": 1.25,  # kgCO2/meal, 2.5kgco2/kg
+        "Waste": 0.5  # kgCO2/kg
+    }
+    , "USA": {
+        "Transportation": 14.3,  # kgCO2/km
+        "Electricity": 0.48,  # kgCO2/kWh
+        "Diet": 1.54,  # kgCO2/meal, estimated by project drawdown
+        "Waste": 0.45  # kgCO2/kg
     }
     , "Vietnam": {
         "Transportation": 1,  # kgCO2/km
@@ -47,17 +47,17 @@ country = st.selectbox("Select", ["India","EU","USA","China","Vietnam"])
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("🚗 Daily commute distance (in km)")
+    st.subheader("Daily commute distance (in km) 🚦")
     distance = st.number_input("Distance", 0.0, 100.0, key="distance_input")
 
-    st.subheader("💡 Monthly electricity consumption (in kWh)")
+    st.subheader("Monthly electricity consumption (in kWh) ⚡")
     electricity = st.number_input("Electricity", 0.0, 1000.0, key="electricity_input")
 
 with col2:
-    st.subheader("🍽️ Waste generated per week (in kg)")
+    st.subheader("Waste generated per week (in kg) 🚮")
     waste = st.number_input("Waste", 0.0, 100.0, key="waste_input")
 
-    st.subheader("🍽️ Number of meals per day")
+    st.subheader("Number of meals per day 🍲")
     meals = st.number_input("Meals", 0, key="meals_input")
 
 # Normalize inputs
