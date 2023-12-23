@@ -55,7 +55,7 @@ with col2:
     st.subheader("Waste generated per week (in kg) 🚮")
     waste = st.number_input("Waste", 0.0, 100.0, key="waste_input")
 
-    st.subheader("Number of meals per day 🍲")
+    st.subheader("Number of meals per day ")
     meals = st.number_input("Meals", 0, key="meals_input")
 
 # Normalize inputs
@@ -96,10 +96,10 @@ if st.button("Calculate CO2 Emissions"):
 
     with col3:
         st.subheader("Carbon Emissions by Category")
-        st.info(f"🚗 Transportation: {transportation_emissions} tonnes CO2 per year")
-        st.info(f"💡 Electricity: {electricity_emissions} tonnes CO2 per year")
-        st.info(f"🍽️ Diet: {diet_emissions} tonnes CO2 per year")
-        st.info(f"🗑️ Waste: {waste_emissions} tonnes CO2 per year")
+        st.info(f"🚦 Transportation: {transportation_emissions} tonnes CO2 per year")
+        st.info(f"⚡ Electricity: {electricity_emissions} tonnes CO2 per year")
+        st.info(f"🍲 Diet: {diet_emissions} tonnes CO2 per year")
+        st.info(f"🚮 Waste: {waste_emissions} tonnes CO2 per year")
 
     with col4:
         st.subheader("Total Carbon Footprint")
