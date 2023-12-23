@@ -16,13 +16,6 @@ EMISSION_FACTORS = {
         "Waste": 0.35,  # kgCO2/kg
         "AverageEmissions": 7.8 #per capita, tons
     }
-    , "India": {
-        "Transportation": 1.6,  # kgCO2/km
-        "Electricity": 0.82,  # kgCO2/kWh
-        "Diet": 1.25,  # kgCO2/meal, 2.5kgco2/kg
-        "Waste": 0.5,  # kgCO2/kg
-        "AverageEmissions": 1.6 #per capita, tons
-    }
     , "USA": {
         "Transportation": 14.3,  # kgCO2/km
         "Electricity": 0.48,  # kgCO2/kWh
